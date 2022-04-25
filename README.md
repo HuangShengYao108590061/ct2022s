@@ -1,4 +1,4 @@
 # ct2022s
 
-## Website Page
+Website Page
 https://HuangShengYao108590061.github.io/ct2022s/
