@@ -185,6 +185,17 @@
         "PUA-B",
       ];
 
+      var pointCBox = document.querySelector("input[id=point-switch]");
+
+      pointCBox.addEventListener('change', function() {
+        if (this.checked) {
+          d3.select('#svg_image').selectAll("circle").attr("hidden",true);
+        } 
+        else {
+          d3.select('#svg_image').selectAll("circle").attr("hidden",null);
+        }
+    });
+
       /** create font svg function */
       function create_font_svg() {
         console.log("start create_font_svg()...");
@@ -239,9 +250,17 @@
                     .attr('d', tmpPath.toPathData())
                     .attr('class', 'font-svg')
                 ;
+                for (let i = 0; i < svgPathObj[1].length; i += 1) {
+                  svg3.append('circle')
+                    .attr('cx', svgPathObj[1][i][0])
+                    .attr('cy', svgPathObj[1][i][1])
+                    .attr('r', 35)
+                    .attr('fill', "red")
+                    .attr('class', 'point-svg');
+                }
+
                 d3.select('#svg_text')
-                    .html(svg3.node().outerHTML)
-                ;
+                    .html(svg3.node().outerHTML);
                 svgHTML = svg3.node().outerHTML;
             }
 
