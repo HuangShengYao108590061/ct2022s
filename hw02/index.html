@@ -117,7 +117,7 @@
       </div>
       <div>
         <label for="point-switch"> Hide Points </label>
-        <input type="checkbox" id="point-switch" checked />
+        <input type="checkbox" id="point-switch"/>
       </div>
       <div
         id="svg_image"
@@ -188,12 +188,8 @@
       var pointCBox = document.querySelector("input[id=point-switch]");
 
       pointCBox.addEventListener('change', function() {
-        if (this.checked) {
-          d3.select('#svg_image').selectAll("circle").attr("hidden",true);
-        } 
-        else {
-          d3.select('#svg_image').selectAll("circle").attr("hidden",null);
-        }
+        if (this.checked) {d3.select('#svg_image').selectAll("circle").attr("hidden",true);} 
+        else {d3.select('#svg_image').selectAll("circle").attr("hidden",null);}
     });
 
       /** create font svg function */
